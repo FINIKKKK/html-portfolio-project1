@@ -1,0 +1,218 @@
+// --------- Varies ----------
+$font: "Roboto";
+$black: #1c1c1c;
+$blue: #1a94ae;
+$gray: #747474;
+
+// ------- Global-Tags --------
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: $font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $black;
+    min-width: 320px;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: $black;
+    transition: color 0.3s;
+}
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+}
+input {
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+textarea {
+    resize: none;
+    border: none;
+}
+
+// --------- ScrollBar ----------
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+::-webkit-scrollbar-track {
+    background-color: #1c1c1c;
+}
+
+// --------- Select-Text ----------
+::selection {
+    background: rgba($blue, 0.3);
+}
+
+// ----------- Global-Class -------------
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.link:hover {
+    color: $blue;
+}
+
+.btn {
+    color: #fff;
+    padding: 7px 30px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: $font;
+    transition: 0.5s;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #1a94ae 0%, #1a94ae 51%, #1ccaf1 100%);
+}
+.btn:hover {
+    background-position: right center;
+}
+
+.input {
+    background-color: rgba($blue, 0.75);
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    width: 310px;
+    font-family: $font;
+    &::placeholder {
+        color: rgba(#fff, 0.6);
+    }
+}
+
+.soclist {
+    display: flex;
+    align-items: center;
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+    &__item a svg {
+        width: 30px;
+    }
+    &__item a svg path {
+        transition: fill 0.3s;
+    }
+}
+.soclist__item:hover {
+    svg path {
+        fill: lighten($blue, 10%);
+    }
+}
+
+.back-text {
+    font-size: 100px;
+    line-height: 117px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
+    position: absolute;
+}
+
+.line {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 2px;
+        background-color: $blue;
+        top: 0;
+        left: 0;
+    }
+}
+
+.wrapper {
+    position: relative;
+    &::after {
+        transition: background 0.3s;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 2;
+    }
+}
+
+.prev,
+.next {
+    position: absolute;
+    z-index: 5;
+    svg {
+        width: 67px;
+        height: 67px;
+    }
+    svg path {
+        transition: fill 0.3s;
+    }
+    &:hover {
+        svg path {
+            fill: $blue;
+        }
+    }
+}
+.prev {
+    transform: rotate(-180deg);
+}
+
+.gallery__welcome-title {
+    // animation: anim 1s ease-out both;
+    animation-delay: 1s;
+    display: inline-block;
+    position: relative;
+    &::before {
+        animation-duration: 1s;
+        animation: anim2 0.7s ease-out both;
+        content: "";
+        position: absolute;
+        background-color: $blue;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes anim {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes anim2 {
+    from {
+        opacity: 1;
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
