@@ -309,7 +309,7 @@
                 right: 0;
                 z-index: -1;
                 width: 60em;
-                background: $blue;
+                background: $main;
                 content: "";
                 transform: skewX(-10deg) translateX(100%);
                 transform-origin: bottom left;
@@ -522,7 +522,7 @@
             }
             .post--active {
                 .blog__post-content {
-                    background-color: rgba($blue, 1);
+                    background-color: rgba($main, 1);
                 }
             }
         }

@@ -3,20 +3,36 @@ $(window).scroll(() => {
     windowTop > 200 ? $('.header').addClass('header-mini') : $('.header').removeClass('header-mini');
 });
 
+const bg = document.querySelector('.top');
+const human = document.querySelector('.top__img-human');
+const mountain = document.querySelector('.top__img-mountain');
+const mountains = document.querySelector('.top__img-mountains');
+const title = document.querySelector('.top__title');
+
+document.addEventListener("scroll", function () {
+    var value = window.scrollY;
+    
+    human.style.transform = `translateY(${value * 0.15}px)`;
+    // mountain.style.top = value * 1 + 'px';
+    mountains.style.top = -value * 0.15 + 'px';
+    title.style.top = value * 1 + 'px';
+})
+
+
 
 $(document).ready(function () {
 
     $('.numbers__item-title').each(function () {
-        $(this).prop('Counter',0).animate({
-         Counter: $(this).text()
-         }, {
-          duration: 2000,
-          easing: 'swing',
-          step: function (now) {
-             $(this).text(Math.ceil(now));
-          }
-         });
-     });
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 
 
     $(function () {
