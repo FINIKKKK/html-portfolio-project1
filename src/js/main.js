@@ -98,39 +98,10 @@ VanillaTilt.init(document.querySelectorAll(".places__item"), {
 
 // --- Аккордион
 $(function () {
-    $('.accordion').find('.accordion__item-header').click(function () {
-
+    $('.accordion').find('.accordion__item-header').click(function (){
         $('.accordion__item').removeClass('accordion__item--active');
-
         $(this).next().slideDown('fast');
-
         $('.accordion__item-answer').not($(this).next()).slideUp('slow');
-
         $(this).parent().addClass('accordion__item--active');
     });
 });
-
-
-
-
-// --- Анимация Чисел
-$('.numbers__item-title').each(function () {
-    $(this).prop('Counter', 0).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 2000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
-        }
-    });
-});
-
-
-
-
-// --- Анимация при Скролле
-new WOW({
-    offset: 400,
-}).init();
-

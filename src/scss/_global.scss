@@ -186,39 +186,3 @@ textarea {
 .prev {
     transform: rotate(-180deg);
 }
-
-.gallery__welcome-title {
-    // animation: anim 1s ease-out both;
-    animation-delay: 1s;
-    display: inline-block;
-    position: relative;
-    &::before {
-        animation-duration: 1s;
-        animation: anim2 0.7s ease-out both;
-        content: "";
-        position: absolute;
-        background-color: $main;
-        left: -100%;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-@keyframes anim {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes anim2 {
-    from {
-        opacity: 1;
-        left: 0;
-    }
-    to {
-        left: 100%;
-    }
-}
