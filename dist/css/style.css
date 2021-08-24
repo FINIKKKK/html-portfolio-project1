@@ -909,7 +909,7 @@ textarea {
   pointer-events: none;
   right: 0;
   z-index: -1;
-  background-color: rgba(10, 38, 57, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
   opacity: 0;
   -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1228,8 +1228,8 @@ textarea {
 }
 
 .ways {
-  padding-top: 100px;
-  padding-bottom: 70px;
+  margin-top: 100px;
+  padding-bottom: 150px;
   position: relative;
 }
 
@@ -1245,7 +1245,7 @@ textarea {
 }
 
 .ways .back-text {
-  top: 40px;
+  top: -20px;
   left: 20px;
 }
 
@@ -1277,7 +1277,7 @@ textarea {
 }
 
 .ways .ways__items .slick-track {
-  padding: 120px 0;
+  padding: 100px 0px;
 }
 
 .ways .ways__item:nth-child(odd) {
@@ -2086,7 +2086,7 @@ textarea {
 
 .footer {
   margin-top: 150px;
-  background-image: url(../img/bg--contact.jpg);
+  background-image: url(../img/bg--footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2163,8 +2163,8 @@ textarea {
           justify-content: space-between;
 }
 
-.footer .contact.wrapper::after {
-  background-color: rgba(0, 0, 0, 0.5);
+.footer.wrapper::after {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .footer .contact__welcome {
@@ -2181,7 +2181,7 @@ textarea {
   font-weight: 700;
   font-size: 48px;
   line-height: 56px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer .contact__title::after {
@@ -6805,7 +6805,7 @@ textarea {
     bottom: -42px;
     right: -10px;
     width: 191px;
-    border-top: 34px solid #1a94ae;
+    border-top: 34px solid #1c1c1c;
   }
 
   .places .stars .star {
@@ -7367,17 +7367,17 @@ textarea {
     font-size: 10px;
   }
 
-  .footer .footer .footer__list {
+  .footer .footer__list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 0 -14px -10px -14px;
   }
 
-  .footer .footer .footer__list .menu__list-item:not(:last-child) {
+  .footer .footer__list .menu__list-item:not(:last-child) {
     margin-right: 0px;
   }
 
-  .footer .footer .footer__list .menu__list-item {
+  .footer .footer__list .menu__list-item {
     font-size: 14px;
     margin: 0 14px !important;
     margin-bottom: 10px !important;
@@ -7836,7 +7836,7 @@ textarea {
     bottom: -55px;
     right: -15px;
     width: 170px;
-    border-top: 26px solid #1a94ae;
+    border-top: 26px solid #1c1c1c;
   }
 
   .places .places__item-content {

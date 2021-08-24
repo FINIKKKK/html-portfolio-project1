@@ -169,7 +169,7 @@
             bottom: -42px;
             right: -10px;
             width: 191px;
-            border-top: 34px solid #1a94ae;
+            border-top: 34px solid $main;
         }
         .stars {
             .star {
@@ -640,19 +640,17 @@
         .footer__copy {
             font-size: 10px;
         }
-        .footer {
-            .footer__list {
-                flex-wrap: wrap;
-                margin: 0 -14px -10px -14px;
-            }
-            .footer__list .menu__list-item:not(:last-child) {
-                margin-right: 0px;
-            }
-            .footer__list .menu__list-item {
-                font-size: 14px;
-                margin: 0 14px !important;
-                margin-bottom: 10px !important;
-            }
+        .footer__list {
+            flex-wrap: wrap;
+            margin: 0 -14px -10px -14px;
+        }
+        .footer__list .menu__list-item:not(:last-child) {
+            margin-right: 0px;
+        }
+        .footer__list .menu__list-item {
+            font-size: 14px;
+            margin: 0 14px !important;
+            margin-bottom: 10px !important;
         }
     }
 }
@@ -1093,7 +1091,7 @@
             bottom: -55px;
             right: -15px;
             width: 170px;
-            border-top: 26px solid #1a94ae;
+            border-top: 26px solid $main;
         }
         .places__item-content {
             padding: 25px 30px 55px 33px;
