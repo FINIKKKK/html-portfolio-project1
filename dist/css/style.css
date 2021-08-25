@@ -2082,6 +2082,11 @@ textarea {
   padding: 10px;
 }
 
+.footer .footer__copy b {
+  padding-left: 5px;
+  font-weight: 700;
+}
+
 .footer .contact {
   color: #fff;
 }
