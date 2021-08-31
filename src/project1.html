@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,700" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+    <!-- Header
+    ======================================================= -->
+    <header class="header">
+        <div class="container">
+            <nav class="menu">
+
+                <a href="#first-screen" class="logo">
+                    <svg width="77" height="42" viewBox="0 0 77 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M47.7892 9.4209L35.5827 36.5H34.5353L46.6086 9.80176H30.0793V8.77344H47.7892V9.4209Z"
+                            fill="white" />
+                        <path
+                            d="M7.79297 26.2632H5.31836V31.7593H1.35352V15.8315H7.99805C10.0215 15.8315 11.5983 16.2508 12.7285 17.0894C13.8587 17.9188 14.4238 19.0946 14.4238 20.6167C14.4238 21.7469 14.1868 22.6812 13.7129 23.4194C13.248 24.1486 12.487 24.7456 11.4297 25.2104L15.0391 31.5952V31.7593H10.7734L7.79297 26.2632ZM5.31836 23.0776H7.99805C9.64779 23.0776 10.4727 22.3986 10.4727 21.0405C10.4727 19.7007 9.61133 19.0308 7.88867 19.0308H5.31836V23.0776ZM31.3359 24.1167C31.3359 25.6753 31.0306 27.0516 30.4199 28.2456C29.8092 29.4396 28.9342 30.3602 27.7949 31.0073C26.6647 31.6545 25.3796 31.978 23.9395 31.978C22.4902 31.978 21.196 31.659 20.0566 31.021C18.9264 30.383 18.0514 29.4761 17.4316 28.3003C16.8118 27.1154 16.4974 25.7528 16.4883 24.2124V23.5015C16.4883 21.9338 16.7936 20.5529 17.4043 19.3589C18.015 18.1649 18.8854 17.2443 20.0156 16.5972C21.1458 15.9409 22.4447 15.6128 23.9121 15.6128C25.3522 15.6128 26.6328 15.9318 27.7539 16.5698C28.8841 17.2078 29.7591 18.1239 30.3789 19.3179C31.0078 20.5028 31.3268 21.87 31.3359 23.4194V24.1167ZM27.3711 23.4878C27.3711 21.9748 27.0658 20.8127 26.4551 20.0015C25.8535 19.1903 25.0059 18.7847 23.9121 18.7847C22.7819 18.7847 21.9206 19.1903 21.3281 20.0015C20.7448 20.8127 20.4531 21.9748 20.4531 23.4878V24.1167C20.4531 25.6024 20.7539 26.7599 21.3555 27.5894C21.957 28.4188 22.8184 28.8335 23.9395 28.8335C24.9967 28.8335 25.8307 28.4233 26.4414 27.603C27.0612 26.7827 27.3711 25.6069 27.3711 24.0757V23.4878ZM46.8945 15.8315V26.1401C46.8945 27.9539 46.3066 29.3804 45.1309 30.4194C43.9551 31.4585 42.319 31.978 40.2227 31.978C38.1354 31.978 36.4948 31.4585 35.3008 30.4194C34.1068 29.3804 33.5098 27.9585 33.5098 26.1538V15.8315H37.4746V26.3452C37.5293 27.9858 38.4453 28.8062 40.2227 28.8062C41.1068 28.8062 41.7767 28.6011 42.2324 28.1909C42.6973 27.7808 42.9297 27.1063 42.9297 26.1675V15.8315H46.8945ZM62.8496 19.0308H57.6816V31.7593H53.7168V19.0308H48.6445V15.8315H62.8496V19.0308ZM75.2227 25.1284H68.6465V28.5874H76.3848V31.7593H64.6816V15.8315H76.3984V19.0308H68.6465V21.9429H75.2227V25.1284Z"
+                            fill="white" />
+                    </svg>
+                </a>
+
+                <ul class="menu__list">
+                    <li class="menu__list-item">
+                        <a class="link" href="#ways">Направления</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#prices">Цены</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#gallery">Галерея</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#blog">Блог</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#contact">Контакты</a>
+                    </li>
+                </ul>
+
+                <select class="language__select">
+                    <option class="language__option">ru</option>
+                    <option class="language__option">en</option>
+                </select>
+
+                <div class="hamburger__wrapper"></div>
+                <button class="hamburger">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+
+            </nav>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- top
+    ======================================================= -->
+    <section class="top" id="first-screen">
+        <div class="top__inner">
+            <div class="top__img top__img-human">
+                <img src="./img/human.png" alt="">
+            </div>
+            <div class="top__img top__img-mountain">
+                <img src="./img/mountain.png" alt="">
+            </div>
+            <div class="top__img top__img-mountains">
+                <img src="./img/mountains.png" alt="">
+            </div>
+            <h1 class="top__title">Открой мир</h1>
+        </div>
+    </section>
+    <!-- top end -->
+
+
+    <!-- about
+    ======================================================= -->
+    <section class="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__img">
+                    <div class="about__img-1">
+                        <img src="./img/about__img-1.jpg" alt="">
+                    </div>
+                    <div class="about__img-2">
+                        <img src="./img/about__img-2.jpg" alt="">
+                    </div>
+                    <div class="about__сircle"></div>
+                </div>
+                <div class="about__content">
+                    <h2 class="about__content-title">Кто мы</h2>
+                    <h4 class="about__content-pretitle">Сделайте свой тур незабываемым и безопасным с нами</h4>
+                    <p class="about__content-text">7th Route - это команда граждан мира, защитников интересов
+                        клиентов и
+                        творческих рассказчиков. С 2002 года мы защищаем, объединяем и вдохновляем таких независимых
+                        путешественников, как вы. Мы одержимы путешествиями и стремимся помочь вам исследовать свое
+                        любопытство и глубже понять мир.
+                    </p>
+                    <a href="#" class="about__content-btn btn">узнать больше</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- about end -->
+
+
+    <!-- ways
+    ======================================================= -->
+    <section class="ways" id="ways">
+        <div class="ways__inner">
+            <h2 class="back-text">Направления</h2>
+            <div class="ways__items">
+                <div class="ways__item wrapper">
+                    <img src="./img/gallery/gallery__item-2.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Москва, <span>Россия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/gallery/gallery__item-6.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Каппадокия, <span>Турция</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/ways/ways__item-3.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Водопад Алинг-Алинг, <span>Индонезия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/ways/ways__item-4.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Сан-Куйрико-д'Орча, <span>Италия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/gallery/gallery__item-4.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Восточный регион, <span>Исландия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper"> <img src="./img/ways/ways__item-6.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Венеция, <span>Италия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/ways/ways__item-7.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Бали, <span>Индонезия</span></h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+                <div class="ways__item wrapper">
+                    <img src="./img/ways/ways__item-8.jpg" alt="" class="ways__item-img">
+                    <div class="ways__item-content">
+                        <h4 class="ways__item-title">Национальный памятник Мьюир Вудс, Милл-Вэлли, <span>США</span>
+                        </h4>
+                        <a href="#" class="ways__item-btn btn">узнать больше</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- ways end -->
+
+
+    <!-- benefits
+    ======================================================= -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits__inner">
+                <div class="benefits__item">
+                    <img src="./img/benefits-1.svg" alt="" class="benefits__item-icon">
+                    <h4 class="benefits__item-title">Незабываемые впечатления</h4>
+                    <p class="benefits__item-text">Наши туры заставят вас почувствовать, что вы действительно
+                        исследовали, от больших впечатлений до скрытых жемчужин.</p>
+                </div>
+                <div class="benefits__item">
+                    <img src="./img/benefits-2.svg" alt="" class="benefits__item-icon">
+                    <h4 class="benefits__item-title">Опытные местные гиды</h4>
+                    <p class="benefits__item-text">Выбраны за отличное знание своей страны и страсть к тому, чтобы
+                        сделать вашу поездку незабываемой.
+                    </p>
+                </div>
+                <div class="benefits__item">
+                    <img src="./img/benefits-3.svg" alt="" class="benefits__item-icon">
+                    <h4 class="benefits__item-title">Небольшие группы и частные поездки</h4>
+                    <p class="benefits__item-text">Групповые туры в среднем составляют всего 12 человек, также
+                        доступны
+                        различные варианты частных поездок.</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- benefits end -->
+
+
+    <!-- price
+    ======================================================= -->
+    <section class="places" id="prices">
+        <div class="container">
+            <div class="places__inner">
+                <div class="places__item">
+                    <div class="places__item-img ">
+                        <img src="./img/gallery/gallery__item-2.jpg" alt="">
+                    </div>
+                    <div class="places__item-content parallax-3d">
+                        <div class="parallax-3d">
+                            <h3 class="places__item-title">Лиссабон, <span>Португалия</span></h3>
+                            <p class="places__item-text">Мы организуем всевозможные горные походы круглый год:
+                                поход на полдня и один день из Турина, походы выходного дня, длинные
+                                треккинг, легкие комфортные туры и ходьба на снегоступах зимой.</p>
+                            <a href="#" class="places__item-btn btn">узнать больше</a>
+                            <div class="stars__wrapper">
+                                <div class="stars parallax-3d">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star--not.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="places__price parallax-3d">
+                        <div class="parallax-3d">
+                            <span>$</span>107
+                        </div>
+                    </div>
+                </div>
+                <div class="places__item">
+                    <div class="places__item-img">
+                        <img src="./img/ways/ways__item-6.jpg" alt="">
+                    </div>
+                    <div class="places__item-content parallax-3d">
+                        <div class="parallax-3d">
+                            <h3 class="places__item-title">Милфорд-Саунд, <span>Новая Зеландия</span></h3>
+                            <p class="places__item-text">Милфорд Саунд, сердце национального парка Фьордленд,
+                                остается
+                                живым памятником первых настоящих лесов, появившихся на нашей планете, и других
+                                удивительных явлений природы. С точки зрения геологии Милфорд Саунд - классический
+                                морской фьорд, появившийся миллионы лет назад.</p>
+                            <a href="#" class="places__item-btn btn">узнать больше</a>
+                            <div class="stars__wrapper">
+                                <div class="stars">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="places__price parallax-3d">
+                        <div class="parallax-3d">
+                            <span>$</span>327
+                        </div>
+                    </div>
+                </div>
+                <div class="places__item">
+                    <div class="places__item-img">
+                        <img src="./img/ways/ways__item-4.jpg" alt="">
+                    </div>
+                    <div class="places__item-content parallax-3d">
+                        <div class="parallax-3d">
+                            <h3 class="places__item-title">Klöntalersee, Гларус, <span>Швейцария</span></h3>
+                            <p class="places__item-text">Клентальское озеро – это необыкновенной красоты природный
+                                водный объект. Оно невелико, расположено высоко в горах (на высоте до километра).
+                                Вытянутая и изогнутая форма не дает возможности увидеть озеро целиком иначе, чем
+                                сверху,
+                                и то, это возможно далеко не всегда. Однако, красота этого места завораживает.</p>
+                            <a href="#" class="places__item-btn btn">узнать больше</a>
+                            <div class="stars__wrapper">
+                                <div class="stars parallax-3d">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star.svg" alt="">
+                                    <img class="star" src="./img/star--not.svg" alt="">
+                                    <img class="star" src="./img/star--not.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="places__price parallax-3d">
+                        <div class="parallax-3d">
+                            <span>$</span>107
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- price end -->
+
+
+    <!-- video
+    ======================================================= -->
+    <section class="video">
+        <div class="video__inner">
+            <div class="video__img wrapper">
+                <img src="./img/video.jpg" alt="">
+            </div>
+            <div class="play"><span></span></div>
+        </div>
+    </section>
+    <!-- video end -->
+
+
+    <!-- numbers
+    ======================================================= -->
+    <section class="numbers">
+        <div class="container">
+            <div class="numbers__inner">
+                <div class="numbers__items">
+                    <div class="numbers__item">
+                        <img src="./img/numbers-1.svg" alt="" class="numbers__item-icon">
+                        <h4 class="numbers__item-title">9313</h4>
+                        <p class="numbers__item-text">Кол-во путешествий</p>
+                    </div>
+                    <div class="numbers__item">
+                        <img src="./img/numbers-2.svg" alt="" class="numbers__item-icon">
+                        <h4 class="numbers__item-title">8492</h4>
+                        <p class="numbers__item-text">Кол-во клиентов</p>
+                    </div>
+                    <div class="numbers__item">
+                        <img src="./img/numbers-3.svg" alt="" class="numbers__item-icon">
+                        <h4 class="numbers__item-title">120</h4>
+                        <p class="numbers__item-text">Кол-во стран</p>
+                    </div>
+                </div>
+                <div class="numbers__title">
+                    <h4>ЛУЧШИЙ СПОСОБ СОВЕРШИТЬ ПОЕЗДКУ</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- numbers end -->
+
+
+    <!-- gallery
+    ======================================================= -->
+    <section class="gallery" id="gallery">
+        <div class="gallery__inner">
+
+            <div class="gallery__grid">
+                <div class="gallery__item">
+                    <div class="gallery__welcome">
+                        <h3 class="gallery__welcome-title">Галерея</h3>
+                        <p class="gallery__welcome-text">
+                            Наше сообщество путешественников делится своими
+                            приключениями,
+                            чтобы помочь вам найти вдохновение</p>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-1.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Памела Льюис</div>
+                        <h5 class="gallery__item-place">Милфорд-Саунд, Новая Зеландия</h5>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-2.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Никитин Артём</div>
+                        <h5 class="gallery__item-place">Водопад Алинг-Алинг, Индонезия</h5>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-3.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Джозеф Уиллис</div>
+                        <h5 class="gallery__item-place">Гуттаннен, Швейцария</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery__grid">
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-4.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Лерой Уоттс</div>
+                        <h5 class="gallery__item-place">Бали, Индонезия</h5>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-5.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Джон Камбер</div>
+                        <h5 class="gallery__item-place">Долина огня, США
+                        </h5>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-6.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Бирюкова Виктория</div>
+                        <h5 class="gallery__item-place">Санта-Моника, США</h5>
+                    </div>
+                </div>
+                <div class="gallery__item wrapper">
+                    <img class="gallery__item-img" src="./img/gallery/gallery__item-7.jpg" alt="">
+                    <div class="gallery__item-content">
+                        <div class="gallery__item-name">Пегги Дин</div>
+                        <h5 class="gallery__item-place">Восточный регион, Исландия</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- gallery end -->
+
+
+    <!-- faq
+    ======================================================= -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq__inner">
+                <h3 class="faq__title">Часто задаваемые вопросы</h3>
+
+                <ul class="accordion">
+
+                    <li class="accordion__item accordion__item--active">
+                        <div class="accordion__item-header">
+                            <div class="accordion__item-title">Какие формы оплаты вы принимаете?</div>
+                            <div class="accordion__item-btn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.41 0.590027L6 5.17003L10.59 0.590027L12 2.00003L6 8.00003L0 2.00003L1.41 0.590027Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item-answer" style="display: block;"><span>Ответ.</span> При
+                            бронировании
+                            вы можете оплатить
+                            дебетовую
+                            или кредитную карту VISA, дебетовую или кредитную карту MasterCard, карту Maestro, Visa
+                            Electron или American Express.</div>
+                    </li>
+                    <li class="accordion__item">
+                        <div class="accordion__item-header">
+                            <div class="accordion__item-title">Как приобрести подарочный сертификат?</div>
+                            <div class="accordion__item-btn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.41 0.590027L6 5.17003L10.59 0.590027L12 2.00003L6 8.00003L0 2.00003L1.41 0.590027Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item-answer"><span>Ответ. </span>Купите подарочный сертификат,
+                            связавшись
+                            с нами по телефону. Затем ваш подарочный сертификат будет отправлен выбранному
+                            получателю по
+                            электронной почте для печати. Подарочные сертификаты, действительны в течение 12 месяцев
+                            с
+                            даты покупки и могут использоваться для бронирования любых мероприятий на веб-сайте
+                        </div>
+                    </li>
+                    <li class="accordion__item">
+                        <div class="accordion__item-header">
+                            <div class="accordion__item-title">Какие услуги доступны мне до поездки?</div>
+                            <div class="accordion__item-btn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.41 0.590027L6 5.17003L10.59 0.590027L12 2.00003L6 8.00003L0 2.00003L1.41 0.590027Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item-answer"><span>Ответ. </span>Глобальные услуги по оказанию помощи
+                            в поездках
+                            доступны круглосуточно и без выходных до и во время поездки, чтобы помочь с различными
+                            потребностями в поездке, такими как: консультации перед поездкой, услуги перевода,
+                            медицинские и юридические направления, культурная информация, услуги консьержа, услуги
+                            по
+                            разрешению кражи личных данных и более.</div>
+                    </li>
+                    <li class="accordion__item">
+                        <div class="accordion__item-header">
+                            <div class="accordion__item-title">Как мне отменить бронирование?</div>
+                            <div class="accordion__item-btn">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.41 0.590027L6 5.17003L10.59 0.590027L12 2.00003L6 8.00003L0 2.00003L1.41 0.590027Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item-answer"><span>Ответ. </span>Чтобы отменить бронирование,
+                            свяжитесь с
+                            isango! напрямую по электронной почте или телефону, чтобы мы могли вам помочь. Плата за
+                            отмену будет применяться в соответствии с политикой мероприятия.</div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <!-- faq end -->
+
+
+    <!-- blog
+    ======================================================= -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="blog__inner">
+                <div class="back-text">Блог</div>
+
+                <div class="blog__posts-1">
+                    <div class="blog__post">
+                        <a href="#" class="blog__post-link">
+                            <img src="./img/gallery/gallery__item-6.jpg" alt="" class="blog__post-img">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">В парке приключений Диснея в Калифорнии открылся кампус
+                                    Мстителей</р>
+                                    <time class="blog__post-date" datetime="2021-06-11 19:00">11.06.2021</time>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog__post">
+                        <a href="#" class="blog__post-link">
+                            <img src="./img/gallery/gallery__item-3.jpg" alt="" class="blog__post-img">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">Больше, чем аквариум: как посетить морской аквариум
+                                    Клируотер и встретить спасенных животных</р>
+                                    <time class="blog__post-date" datetime="2021-04-01 19:00">01.04.2021</time>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog__post post--active">
+                        <a href="#" class="blog__post-link">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">Познакомьтесь с дикой природой в зоопарке и садах
+                                    Сан-Франциско</р>
+                                    <time class="blog__post-date" datetime="2021-01-16 19:00">16.01.2021</time>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog__posts-2">
+                    <div class="blog__post post--active">
+                        <a href="#" class="blog__post-link">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">Сидей: все, что вам нужно знать о харбор -сити</h5>
+                                <time class="blog__post-date" datetime="2020-12-12 19:00">12.12.2020</time>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog__post">
+                        <a href="#" class="blog__post-link">
+                            <img src="./img/posts/posts__item-5.jpg" alt="" class="blog__post-img">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">Мой любимый экспонат: Риф Стингрей в Аквариуме в центре
+                                    Хьюстона.</h5>
+                                <time class="blog__post-date" datetime="2020-12-10 19:00">10.12.2020</time>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog__post">
+                        <a href="#" class="blog__post-link">
+                            <img src="./img/posts/posts__item-6.jpg" alt="" class="blog__post-img">
+                            <div class="blog__post-content">
+                                <h5 class="blog__post-title">Полный путеводитель по достопримечательностям Нью-Йорка
+                                </h5>
+                                <time class="blog__post-date" datetime="2020-10-12 19:00">12.10.2020</time>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- blog end -->
+
+
+    <!-- footer 
+    ======================================================= -->
+    <footer class="footer wrapper" id="contact">
+        <div class="footer__inner">
+            <div class="contact">
+                <div class="container">
+                    <div class="contact__inner">
+                        <div class="contact__welcome">
+                            <h4 class="contact__title line">Cвяжитесь с нами</h4>
+                            <p class="contact__text">Спланируйте свое путешествие прямо сейчас </p>
+                        </div>
+                        <div class="contact__content">
+                            <div class="contact__info">
+                                <p class="contact__info-text">Наша миссия - «дать возможность каждому испытать
+                                    уникальность
+                                    мира
+                                    вместе с нами».</p>
+                                <div class="contact__info-connection">
+                                    <div class="contact__info-email">info@route7company.com</div>
+                                    <div class="contact__info-phone">+7 777 666 5544</div>
+                                </div>
+                                <ul class="soclist">
+                                    <li class="soclist__item">
+                                        <a href="#" class="soclist__item-link">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path
+                                                        d="M18.6632 4.64917H21.2194V0.197167C20.7784 0.1365 19.2617 0 17.4954 0C13.8099 0 11.2852 2.31817 11.2852 6.57883V10.5H7.2182V15.477H11.2852V28H16.2715V15.4782H20.174L20.7935 10.5012H16.2704V7.07233C16.2715 5.63383 16.6589 4.64917 18.6632 4.64917Z"
+                                                        fill="#fff" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="28" height="28" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="soclist__item">
+                                        <a href="#" class="soclist__item-link">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path
+                                                        d="M28 5.31825C26.9587 5.775 25.8492 6.07775 24.6925 6.22475C25.8825 5.51425 26.7908 4.39775 27.2178 3.052C26.1083 3.7135 24.8832 4.18075 23.5777 4.4415C22.5243 3.31975 21.0227 2.625 19.3848 2.625C16.2067 2.625 13.6482 5.2045 13.6482 8.36675C13.6482 8.82175 13.6868 9.25925 13.7812 9.67575C9.009 9.443 4.78625 7.15575 1.9495 3.6715C1.45425 4.53075 1.16375 5.51425 1.16375 6.573C1.16375 8.561 2.1875 10.3232 3.7135 11.3435C2.79125 11.326 1.8865 11.0583 1.12 10.6365C1.12 10.654 1.12 10.6768 1.12 10.6995C1.12 13.489 3.10975 15.806 5.719 16.3398C5.25175 16.4675 4.7425 16.5287 4.214 16.5287C3.8465 16.5287 3.4755 16.5077 3.12725 16.4307C3.871 18.704 5.9815 20.3752 8.491 20.4295C6.538 21.9573 4.05825 22.8778 1.37375 22.8778C0.903 22.8778 0.4515 22.8568 0 22.799C2.54275 24.4387 5.55625 25.375 8.806 25.375C19.369 25.375 25.144 16.625 25.144 9.0405C25.144 8.78675 25.1353 8.54175 25.123 8.2985C26.2622 7.49 27.2195 6.48025 28 5.31825Z"
+                                                        fill="#fff" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="28" height="28" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="soclist__item">
+                                        <a href="#" class="soclist__item-link">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path
+                                                        d="M23.2342 15.2C22.7815 14.6283 22.911 14.374 23.2342 13.863C23.24 13.8572 26.9768 8.69348 27.3618 6.94232L27.3642 6.94115C27.5555 6.30298 27.3642 5.83398 26.439 5.83398H23.3777C22.5983 5.83398 22.239 6.23648 22.0465 6.68682C22.0465 6.68682 20.4878 10.4178 18.2828 12.8363C17.5712 13.5352 17.2422 13.7592 16.8537 13.7592C16.6623 13.7592 16.3648 13.5352 16.3648 12.897V6.94115C16.3648 6.17582 16.1467 5.83398 15.5015 5.83398H10.6878C10.199 5.83398 9.9085 6.19098 9.9085 6.52348C9.9085 7.24915 11.011 7.41598 11.1253 9.45765V13.8875C11.1253 14.8582 10.9492 15.0367 10.5583 15.0367C9.51767 15.0367 6.99183 11.2905 5.495 7.00298C5.19283 6.17115 4.89767 5.83515 4.1125 5.83515H1.05C0.176167 5.83515 0 6.23765 0 6.68798C0 7.48365 1.04067 11.4398 4.83933 16.6665C7.371 20.2342 10.9363 22.1673 14.1797 22.1673C16.1292 22.1673 16.3672 21.738 16.3672 20.9995C16.3672 17.5905 16.191 17.2685 17.1675 17.2685C17.6202 17.2685 18.3995 17.4925 20.2195 19.2133C22.2997 21.2538 22.6415 22.1673 23.8058 22.1673H26.8672C27.7398 22.1673 28.182 21.738 27.9277 20.891C27.3455 19.1095 23.4115 15.445 23.2342 15.2Z"
+                                                        fill="#fff" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="28" height="28" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="soclist__item">
+                                        <a href="#" class="soclist__item-link">
+                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                    <path
+                                                        d="M27.9726 8.23208C27.907 6.74433 27.6664 5.72152 27.3218 4.83523C26.9662 3.89447 26.4193 3.0522 25.7026 2.35202C25.0024 1.64095 24.1546 1.08841 23.2248 0.738425C22.3333 0.393784 21.3159 0.153198 19.8281 0.0876025C18.3293 0.0164522 17.8534 0 14.0519 0C10.2504 0 9.77457 0.0164522 8.28126 0.0820473C6.79352 0.147642 5.7707 0.388443 4.88464 0.73287C3.94366 1.08841 3.10139 1.63539 2.40121 2.35202C1.69014 3.0522 1.13782 3.90002 0.787619 4.82989C0.442978 5.72152 0.202392 6.73877 0.136797 8.22652C0.0656465 9.72538 0.0491943 10.2012 0.0491943 14.0027C0.0491943 17.8043 0.0656465 18.2801 0.131242 19.7734C0.196837 21.2611 0.437637 22.284 0.782278 23.1702C1.13782 24.111 1.69014 24.9533 2.40121 25.6534C3.10139 26.3645 3.94921 26.9171 4.87908 27.267C5.7707 27.6117 6.78796 27.8523 8.27592 27.9179C9.76901 27.9837 10.2451 27.9999 14.0466 27.9999C17.8481 27.9999 18.3239 27.9837 19.8172 27.9179C21.305 27.8523 22.3278 27.6117 23.2139 27.267C25.0956 26.5395 26.5833 25.0518 27.3109 23.1702C27.6553 22.2786 27.8961 21.2611 27.9617 19.7734C28.0273 18.2801 28.0437 17.8043 28.0437 14.0027C28.0437 10.2012 28.0382 9.72538 27.9726 8.23208ZM25.4511 19.664C25.3909 21.0315 25.1612 21.7699 24.9698 22.2622C24.4993 23.482 23.5311 24.4501 22.3113 24.9206C21.8191 25.112 21.0753 25.3417 19.7132 25.4017C18.2363 25.4676 17.7934 25.4838 14.0575 25.4838C10.3215 25.4838 9.87306 25.4676 8.40156 25.4017C7.0341 25.3417 6.29568 25.112 5.8034 24.9206C5.19637 24.6962 4.64384 24.3407 4.19536 23.8758C3.73042 23.4217 3.37488 22.8747 3.15054 22.2677C2.95909 21.7754 2.7294 21.0315 2.66936 19.6696C2.60355 18.1927 2.58732 17.7496 2.58732 14.0136C2.58732 10.2777 2.60355 9.82922 2.66936 8.35792C2.7294 6.99047 2.95909 6.25204 3.15054 5.75976C3.37488 5.15253 3.73042 4.6002 4.20091 4.15151C4.65473 3.68657 5.20172 3.33103 5.80895 3.1069C6.30123 2.91546 7.04521 2.68577 8.40711 2.62551C9.88396 2.55992 10.3271 2.54347 14.0628 2.54347C17.8043 2.54347 18.2472 2.55992 19.7187 2.62551C21.0862 2.68577 21.8246 2.91546 22.3169 3.1069C22.9239 3.33103 23.4764 3.68657 23.9249 4.15151C24.3899 4.60554 24.7454 5.15253 24.9698 5.75976C25.1612 6.25204 25.3909 6.99581 25.4511 8.35792C25.5167 9.83478 25.5332 10.2777 25.5332 14.0136C25.5332 17.7496 25.5167 18.1871 25.4511 19.664Z"
+                                                        fill="#fff" />
+                                                    <path
+                                                        d="M14.0519 6.80957C10.081 6.80957 6.85913 10.0312 6.85913 14.0024C6.85913 17.9736 10.081 21.1952 14.0519 21.1952C18.0231 21.1952 21.2447 17.9736 21.2447 14.0024C21.2447 10.0312 18.0231 6.80957 14.0519 6.80957ZM14.0519 18.6682C11.4758 18.6682 9.38614 16.5788 9.38614 14.0024C9.38614 11.426 11.4758 9.33658 14.0519 9.33658C16.6283 9.33658 18.7177 11.426 18.7177 14.0024C18.7177 16.5788 16.6283 18.6682 14.0519 18.6682Z"
+                                                        fill="#fff" />
+                                                    <path
+                                                        d="M23.2085 6.52587C23.2085 7.45318 22.4566 8.20506 21.5291 8.20506C20.6018 8.20506 19.8499 7.45318 19.8499 6.52587C19.8499 5.59835 20.6018 4.84668 21.5291 4.84668C22.4566 4.84668 23.2085 5.59835 23.2085 6.52587Z"
+                                                        fill="#fff" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0">
+                                                        <rect width="28" height="28" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="contact__form">
+                                <div class="contact__form-inputs">
+                                    <input type="text" class="input contact__form-input" placeholder="Имя">
+                                    <input type="text" class="input contact__form-input"
+                                        placeholder="Электронная почта">
+                                </div>
+                                <textarea type="text" class="input contact__form-textarea"
+                                    placeholder="Сообщение"></textarea>
+                                <input type="submit" class="btn contact__form-btn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <ul class="footer__list">
+                    <li class="menu__list-item">
+                        <a class="link" href="#">Направления</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#">Цены</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#">Галерея</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#">FAQ</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#">Блог</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="link" href="#">Контакты</a>
+                    </li>
+                </ul>
+                <small class="footer__copy">Создатель шаблона <b> Dmitriy Bozhko.</b></small>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- Scripts -->
+    <script src="js/script.min.js"></script>
+
+</body>
+
+</html>
