@@ -1,0 +1,172 @@
+.simple-select {
+    --max-scroll: 8;
+    --text: #000;
+    --border: #000;
+    --borderActive: #000;
+    --background: #fff;
+    --arrow: #000;
+    --arrowActive: #000;
+    --listText: #99A3BA;
+    --listBackground: #F5F9FF;
+    --listActive: #E4ECFA;
+    --listTextActive: #6C7486;
+    --listBorder: none;
+    --textFilled: #000;
+    width: 220px;
+    position: relative;
+    select {
+        display: none;
+    }
+    & > span {
+        cursor: pointer;
+        padding: 9px 16px;
+        border-radius: 6px;
+        display: block;
+        position: relative;
+        color: var(--text);
+        border: 1px solid var(--border);
+        background: var(--background);
+        transition: all .3s ease;
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            border-radius: 1px;
+            top: 50%;
+            right: 15px;
+            background: var(--arrow);
+            transition: all .3s ease;
+        }
+        &:before {
+            margin-right: 4px;
+            transform: scale(.96, .8) rotate(50deg);
+        }
+        &:after {
+            transform: scale(.96, .8) rotate(-50deg);
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        max-height: calc(var(--max-scroll) * 42px);
+        top: 42px;
+        left: 0;
+        z-index: 1;
+        right: 0;
+        background: var(--listBackground);
+        border-radius: 6px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform-origin: 0 0;
+        transition: opacity .2s ease, visibility .2s ease, transform .3s cubic-bezier(.4, .6, .5, 1.32);
+        transform: scale(.8) translate(0, 4px);
+        border: 1px solid var(--listBorder);
+        li {
+            opacity: 0;
+            transform: translate(6px, 0);
+            transition: all .3s ease;
+            a {
+                cursor: pointer;
+                display: block;
+                padding: 10px 16px;
+                color: var(--listText);
+                text-decoration: none;
+                outline: none;
+                position: relative;
+                transition: all .3s ease;
+                &:hover {
+                    color: var(--listTextActive);
+                }
+            }
+            &.active {
+                a {
+                    color: var(--listTextActive);
+                    background: var(--listActive);
+                    &:before,
+                    &:after {
+                        --scale: .6;
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 2px;
+                        position: absolute;
+                        right: 17px;
+                        top: 50%;
+                        opacity: 0;
+                        background: var(--listText);
+                        transition: all .2s ease;
+                    }
+                    &:before {
+                        transform: rotate(45deg) scale(var(--scale));
+                    }
+                    &:after {
+                        transform: rotate(-45deg) scale(var(--scale));
+                    }
+                    &:hover {
+                        &:before,
+                        &:after {
+                            --scale: .9;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &:first-child {
+                a {
+                    border-radius: 6px 6px 0 0;
+                }
+            }
+            &:last-child {
+                a {
+                    border-radius: 0 0 6px 6px;
+                }
+            }
+        }
+    }
+    &.filled {
+        & > span {
+            color: var(--textFilled);
+        }
+    }
+    &.open {
+        & > span {
+            border-color: var(--borderActive);
+            &:before,
+            &:after {
+                background: var(--arrowActive);
+            }
+            &:before {
+                transform: scale(.96, .8) rotate(-50deg);
+            }
+            &:after {
+                transform: scale(.96, .8) rotate(50deg);
+            }
+        }
+        ul {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translate(0, 12px);
+            transition: opacity .3s ease, visibility .3s ease, transform .3s cubic-bezier(.4, .6, .5, 1.32);
+            li {
+                opacity: 1;
+                transform: translate(0, 0);
+                $i: 1;
+                @while $i <= 10 {
+                    $delay: $i * 80;
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{$delay}ms;
+                    }
+                    $i: $i + 1;
+                }
+            }
+        }
+    }
+}
+
