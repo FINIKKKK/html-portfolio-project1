@@ -1,74 +1,61 @@
 // --------- Varies ----------
 $font: "Roboto";
 $black: #1c1c1c;
-// $main: #A95100;
-$main: #1c1c1c;
 $gray: #747474;
 
-// ------- Global-Tags --------
+// --------- Global-Tags ----------
 html {
+    overflow-x: hidden;
     box-sizing: border-box;
+    &.hidden {
+        overflow-y: hidden;
+    }
 }
 *,
-*::before,
-*::after {
+*::after,
+*::before {
     box-sizing: inherit;
 }
 body {
+    position: relative;
+    overflow-x: hidden;
+    min-width: 320px;
     font-family: $font;
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
     color: $black;
-    min-width: 320px;
-    overflow-x: hidden;
-    position: relative;
 }
 a {
     text-decoration: none;
-    display: inline-block;
     color: $black;
-    transition: color 0.3s;
+    display: inline-block;
 }
 button {
-    border: none;
     outline: none;
-    cursor: pointer;
-    background-color: transparent;
+    border: none;
     padding: 0;
+    font-family: inherit;
+    background-color: transparent;
+    cursor: pointer;
 }
 input {
-    background-color: #fff;
-    border: none;
     outline: none;
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
 }
 textarea {
-    resize: none;
+    outline: none;
     border: none;
+    font-family: inherit;
+    background-color: transparent;
+    resize: none;
+}
+section {
+    position: relative;
 }
 
-// --------- ScrollBar ----------
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #fff;
-}
-::-webkit-scrollbar-track {
-    background-color: #1c1c1c;
-}
-
-// --------- Select-Text ----------
-::selection {
-    background: rgba($main, 0.3);
-}
-
-.wrapper-s {
-    height: 100% !important;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-}
 // ----------- Global-Class -------------
 .container {
     max-width: 1170px;
@@ -76,8 +63,15 @@ textarea {
     padding: 0 15px;
 }
 
+// .wrapper-s {
+//     height: 100% !important;
+//     height: 100%;
+//     margin: 0 auto;
+//     overflow: hidden;
+// }
+
 .link:hover {
-    color: $main;
+    color: $black;
 }
 
 .btn {
@@ -91,14 +85,14 @@ textarea {
     font-family: $font;
     transition: 0.5s;
     background-size: 200% auto;
-    background-image: linear-gradient(to right, $main 0%, $main 51%, #303030 100%);
+    background-image: linear-gradient(to right, $black 0%, $black 51%, #303030 100%);
 }
 .btn:hover {
     background-position: right center;
 }
 
 .input {
-    background-color: rgba($main, 0.7);
+    background-color: rgba($black, 0.7);
     padding: 10px 15px;
     color: #fff;
     font-size: 14px;
@@ -145,7 +139,7 @@ textarea {
         position: absolute;
         width: 120px;
         height: 2px;
-        background-color: $main;
+        background-color: $black;
         top: 0;
         left: 0;
     }
@@ -179,10 +173,26 @@ textarea {
     }
     &:hover {
         svg path {
-            fill: $main;
+            fill: $black;
         }
     }
 }
 .prev {
     transform: rotate(-180deg);
+}
+
+// --------- ScrollBar ----------
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+::-webkit-scrollbar-track {
+    background-color: #1c1c1c;
+}
+
+// --------- Select-Text ----------
+::selection {
+    background: rgba($black, 0.3);
 }

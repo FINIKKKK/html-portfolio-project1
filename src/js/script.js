@@ -22,11 +22,14 @@
 
 // Plugins ----------------
 @@include('./plugins/simple-select.js');
-@@include('../js/slick.min.js');
-@@include('../js/vanilla-tilt.min.js');
+
+@@include('../../node_modules/swiper/swiper-bundle.min.js');
+@@include('../../node_modules/vanilla-tilt/dist/vanilla-tilt.min.js');
+@@include('../../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js');
+
 
 
 // Main-JS -----------------
-@@include('../js/main.js');
+@@include('./main.js');
 
 

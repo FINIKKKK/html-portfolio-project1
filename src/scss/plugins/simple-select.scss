@@ -60,14 +60,13 @@
         left: 0;
         z-index: 1;
         right: 0;
-        background: var(--listBackground);
+        background: rgba(#fff, 1);
         border-radius: 6px;
         overflow-x: hidden;
         overflow-y: auto;
         transform-origin: 0 0;
         transition: opacity .2s ease, visibility .2s ease, transform .3s cubic-bezier(.4, .6, .5, 1.32);
         transform: scale(.8) translate(0, 4px);
-        border: 1px solid var(--listBorder);
         li {
             opacity: 0;
             transform: translate(6px, 0);
@@ -82,40 +81,13 @@
                 position: relative;
                 transition: all .3s ease;
                 &:hover {
-                    color: var(--listTextActive);
+                    background-color: #c0cbe9 !important;
                 }
             }
             &.active {
                 a {
-                    color: var(--listTextActive);
                     background: var(--listActive);
-                    &:before,
-                    &:after {
-                        --scale: .6;
-                        content: '';
-                        display: block;
-                        width: 10px;
-                        height: 2px;
-                        position: absolute;
-                        right: 17px;
-                        top: 50%;
-                        opacity: 0;
-                        background: var(--listText);
-                        transition: all .2s ease;
-                    }
-                    &:before {
-                        transform: rotate(45deg) scale(var(--scale));
-                    }
-                    &:after {
-                        transform: rotate(-45deg) scale(var(--scale));
-                    }
-                    &:hover {
-                        &:before,
-                        &:after {
-                            --scale: .9;
-                            opacity: 1;
-                        }
-                    }
+                    font-weight: 700;
                 }
             }
             &:first-child {
@@ -138,10 +110,6 @@
     &.open {
         & > span {
             border-color: var(--borderActive);
-            &:before,
-            &:after {
-                background: var(--arrowActive);
-            }
             &:before {
                 transform: scale(.96, .8) rotate(-50deg);
             }

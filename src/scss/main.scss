@@ -1,11 +1,3 @@
-.about,
-.ways,
-.benefits,
-.numbers,
-.footer {
-    overflow-x: hidden;
-}
-
 // --------- Header ----------
 .header {
     transition: background-color 0.4s;
@@ -30,7 +22,7 @@
             transition: fill 0.3s;
         }
         path:nth-child(1) {
-            fill: $main;
+            fill: $black;
         }
     }
     .menu__list {
@@ -45,11 +37,11 @@
         color: #fff;
     }
     .menu__list-item a:hover {
-        color: $main;
+        color: $black;
     }
     .hamburger {
         z-index: 100;
-        display: none;
+        display: flex;
         overflow: hidden;
         margin-left: 25px;
         background-color: transparent;
@@ -72,14 +64,35 @@
             width: 100%;
         }
     }
-    .language__select {
-        background-color: transparent;
-        border: none;
-        color: #fff;
-        transition: color 0.3s;
+    .simple-select {
+        width: auto;
+        span {
+            background-color: transparent;
+            border: none;
+            color: #fff !important;
+            padding: 0;
+            padding-right: 20px;
+            &::after,
+            &::before {
+                background-color: #fff;
+                right: 0;
+            }
+        }
+        ul {
+            top: 15px;
+            left: auto;
+            right: 0;
+            background-color: #e4ecfa;
+        }
+        li a {
+            padding: 7px 15px;
+            color: $black;
+        }
     }
     .hamburger__wrapper {
         position: absolute;
+        display: none;
+        right: 0px;
         &::before {
             height: 100vh;
             content: "";
@@ -90,7 +103,7 @@
             pointer-events: none;
             right: 0;
             z-index: -1;
-            background-color: rgba(darken($main, 40%), 0.75);
+            background-color: rgba(darken($black, 40%), 0.75);
             opacity: 0;
             transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
         }
@@ -141,10 +154,17 @@
                 width: 70%;
             }
         }
-        .language__select {
+        .simple-select {
             transform: translateX(0);
-            .language__option {
-                color: $black;
+        }
+        .simple-select {
+            span {
+                background-color: transparent;
+                color: #fff !important;
+                &::after,
+                &::before {
+                    background-color: #fff;
+                }
             }
         }
     }
@@ -172,8 +192,15 @@
         .hamburger__line {
             background-color: $black;
         }
-        .language__select {
-            color: $black;
+        .simple-select {
+            span {
+                background-color: transparent;
+                color: $black !important;
+                &::after,
+                &::before {
+                    background-color: $black;
+                }
+            }
         }
     }
 }
@@ -290,6 +317,17 @@
         position: relative;
         padding-left: 85px;
         padding-bottom: 85px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            z-index: -1;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background-color: rgba($black, 0.1);
+        }
     }
     .about__img-1.wrapper::after {
         border-radius: 50%;
@@ -299,27 +337,13 @@
         border-radius: 50%;
         z-index: 5;
     }
-    .about__сircle {
-        position: relative;
-        z-index: -1;
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            background-color: rgba($main, 0.1);
-        }
-    }
     .about__content {
         width: 500px;
         &-title {
             font-size: 100px;
             line-height: 117px;
             font-weight: 700;
-            color: $main;
+            color: $black;
         }
         &-pretitle {
             font-weight: 300;
@@ -449,6 +473,17 @@
     .benefits__item:not(:last-child) {
         margin-right: 80px;
     }
+    .benefits__item-icon {
+        svg {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .benefits__item:nth-child(2) {
+        .benefits__item-icon svg {
+            margin-left: -15px;
+        }
+    }
 }
 
 // --------- Places ----------
@@ -504,7 +539,7 @@
         &::before {
             content: "";
             position: absolute;
-            background-color: $main;
+            background-color: $black;
             width: 320px;
             height: 450px;
             z-index: -1;
@@ -515,7 +550,7 @@
     .places__item-content {
         position: relative;
         width: 560px;
-        background-color: rgba($main, 0.85);
+        background-color: rgba($black, 0.85);
         padding: 40px 35px;
         margin-left: -100px;
         z-index: 10;
@@ -539,7 +574,7 @@
         position: absolute;
         bottom: 50px;
         left: 105px;
-        background-color: $main;
+        background-color: $black;
         padding: 10px 5px 40px 35px;
         font-weight: 300;
         font-size: 40px;
@@ -555,7 +590,7 @@
         right: 0px;
         height: 0;
         width: 230px;
-        border-top: 40px solid $main;
+        border-top: 40px solid $black;
         border-left: 30px solid transparent;
         border-right: 30px solid transparent;
     }
@@ -631,9 +666,12 @@
         width: 170px;
         text-align: center;
         &-icon {
-            width: 78px;
             text-align: center;
             margin: 0 auto;
+            svg {
+                width: 80px;
+                height: 80px;
+            }
         }
         &-title {
             margin-top: 30px;
@@ -694,7 +732,7 @@
                 position: absolute;
                 width: 150px;
                 height: 3px;
-                background-color: $main;
+                background-color: $black;
                 bottom: 0;
                 left: 0;
             }
@@ -846,7 +884,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid $main;
+            border-bottom: 3px solid $black;
         }
         &-title {
             color: #555555;
@@ -868,7 +906,7 @@
             opacity: 0;
             span {
                 font-weight: 700;
-                color: $main;
+                color: $black;
             }
         }
     }
@@ -912,7 +950,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        // background-color: rgba($main, 0.8);
+        // background-color: rgba($black, 0.8);
         background-color: #494949;
         color: #fff;
         padding: 40px 20px;

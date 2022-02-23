@@ -17,6 +17,7 @@ $('.hamburger').on('click', function () {
 $("body").on('click', '[href*="#"]', function (e) {
     var fixed_offset = 100;
     $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
+    $('header').removeClass('mobile');
     e.preventDefault();
 });
 
@@ -39,54 +40,6 @@ document.addEventListener("scroll", function () {
 
 
 
-// --- Slider-Ways
-$('.ways__items').slick({
-    slidesToShow: 4,
-    centerMode: true,
-    nextArrow: '<div class="next"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-    prevArrow: '<div class="prev"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-    responsive: [
-        {
-            breakpoint: 1100,
-            settings: {
-                slidesToShow: 3,
-            }
-        },
-        {
-            breakpoint: 800,
-            settings: {
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 550,
-            settings: {
-                slidesToShow: 1,
-                arrows: false,
-            }
-        },
-    ]
-});
-
-
-
-// --- Slider-Places
-$('.places__inner').slick({
-    nextArrow: '<div class="next"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-    prevArrow: '<div class="prev"><svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5833 11.75L16.822 14.5112L25.7912 23.5L16.822 32.4888L19.5833 35.25L31.3333 23.5L19.5833 11.75Z" fill="#555555"/></svg></div>',
-    responsive: [
-        {
-            breakpoint: 650,
-            settings: {
-                autoplay: true,
-                autoplaySpeed: 5000,
-                arrows: false,
-            }
-        },
-    ]
-});
-
-
 
 // --- Эффект-3D у "Places"
 VanillaTilt.init(document.querySelectorAll(".places__item"), {
@@ -97,11 +50,110 @@ VanillaTilt.init(document.querySelectorAll(".places__item"), {
 
 
 // --- Аккордион
-$(function () {
-    $('.accordion').find('.accordion__item-header').click(function (){
-        $('.accordion__item').removeClass('accordion__item--active');
-        $(this).next().slideDown('fast');
-        $('.accordion__item-answer').not($(this).next()).slideUp('slow');
-        $(this).parent().addClass('accordion__item--active');
+$('.accordion').find('.accordion__item-header').click(function () {
+    $('.accordion__item').removeClass('active');
+    $(this).next().slideDown('fast');
+    $('.accordion__item-answer').not($(this).next()).slideUp('slow');
+    $(this).parent().addClass('active');
+});
+
+
+new Swiper('.swiper-ways', {
+    slidesPerView: 4,
+    loop: true,
+    centeredSlides: true,
+    navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+    },
+    breakpoints: {
+        1100: {
+            slidesPerView: 4,
+        },
+        800: {
+            slidesPerView: 3,
+        },
+        500: {
+            slidesPerView: 2,
+        },
+        0: {
+            slidesPerView: 1,
+        },
+    }
+});
+
+
+
+new Swiper('.swiper-places', {
+    loop: false,
+    effect: "fade",
+    navigation: {
+        nextEl: '.next',
+        prevEl: '.prev',
+    },
+    autoplay: {
+        delay: 8000,
+        disableOnInteraction: true,
+    },
+});
+
+
+
+
+$('.gallery-magnific').magnificPopup({
+    type: 'image',
+    gallery: {
+        // options for gallery
+        enabled: true,
+        tCounter: '<span class="mfp-counter">%curr% of %total%</span>'
+    },
+    titleSrc: 'title',
+});
+$('.video-youtube').magnificPopup({
+    type: 'iframe',
+    removalDelay: 160,
+    preloader: false,
+});
+
+
+// Проверка валидации 
+$(document).ready(function () {
+    $('#contact__form').submit(function (e) {
+        e.preventDefault();
+        var message = $('#contact__form-message').val();
+        var email = $('#contact__form-email').val();
+
+        $(".error").remove();
+        $(".input").removeClass('input-error');
+
+        if (message.length < 1) {
+            $('#contact__form-message').addClass('input-error');
+            $('#contact__form-message').after('<span class="error">Заполните поле</span>');
+        }
+        if (email.length < 1) {
+            $('#contact__form-email').addClass('input-error');
+            $('#contact__form-email').after('<span class="error">Заполните поле</span>');
+        } else {
+            var regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var validEmail = regEx.test(email);
+            if (!validEmail) {
+                $('#contact__form-email').addClass('input-error');
+                $('#contact__form-email').after('<span class="error">Заполните правильно</span>');
+            }
+        }
     });
+});
+
+
+
+$(window).scroll(function () {
+    var box1 = $('.header').offset().top;
+    /*Если сделали скролл на 100px задаём новый класс для header*/
+    if (box1 > 100) {
+        $('.simple-select').removeClass('open');
+    } 
 });
