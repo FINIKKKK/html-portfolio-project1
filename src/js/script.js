@@ -26,6 +26,7 @@
 @@include('../../node_modules/swiper/swiper-bundle.min.js');
 @@include('../../node_modules/vanilla-tilt/dist/vanilla-tilt.min.js');
 @@include('../../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js');
+@@include('../../node_modules//wowjs/dist/wow.min.js');
 
 
 

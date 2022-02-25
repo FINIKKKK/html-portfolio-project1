@@ -367,8 +367,23 @@ const svgSprite = () => {
         .pipe(gulpSvgSprite({
             mode: {
                 stack: {
-                    sprite: `../icons/icons.svg`,
-                }
+                    sprite: "../icons/icons.svg",
+                },
+            },
+            shape: {
+                transform: [
+                    {
+                        svgo: {
+                            plugins: [
+                                {
+                                    removeAttrs: {
+                                        attrs: ['fill', 'stroke'],
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         }))
         .pipe(gulp.dest(path.build.img))

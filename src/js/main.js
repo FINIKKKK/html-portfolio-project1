@@ -42,10 +42,17 @@ document.addEventListener("scroll", function () {
 
 
 // --- Эффект-3D у "Places"
-VanillaTilt.init(document.querySelectorAll(".places__item"), {
+let destroyBox = document.querySelector(".places__item");
+VanillaTilt.init(destroyBox, {
     max: 15,
-    speed: 300
+    speed: 1000,
+    scale: 1.05,
+    transition: true,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
 });
+if (window.innerWidth < 700) {
+    destroyBox.vanillaTilt.destroy();
+}
 
 
 
@@ -58,7 +65,7 @@ $('.accordion').find('.accordion__item-header').click(function () {
 });
 
 
-new Swiper('.swiper-ways', {
+const swiper_ways = new Swiper('.swiper-ways', {
     slidesPerView: 4,
     loop: true,
     centeredSlides: true,
@@ -71,45 +78,65 @@ new Swiper('.swiper-ways', {
         disableOnInteraction: true,
     },
     breakpoints: {
+        2200: {
+            slidesPerView: 6,
+        },
+        1700: {
+            slidesPerView: 5,
+        },
         1100: {
             slidesPerView: 4,
         },
         800: {
             slidesPerView: 3,
         },
-        500: {
+        550: {
             slidesPerView: 2,
+            centeredSlides: false,
         },
         0: {
             slidesPerView: 1,
+            centeredSlides: true,
         },
     }
 });
 
 
 
-new Swiper('.swiper-places', {
-    loop: false,
-    effect: "fade",
+const swiper_places = new Swiper('.swiper-places', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 100,
     navigation: {
         nextEl: '.next',
         prevEl: '.prev',
     },
-    autoplay: {
-        delay: 8000,
-        disableOnInteraction: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
+    breakpoints: {
+        600: {
+            autoplay: {
+                enabled: false,
+            },
+        },
+        0: {
+            autoplay: {
+                enabled: true,
+                delay: 8000,
+                disableOnInteraction: true,
+            },
+        },
+    }
 });
-
 
 
 
 $('.gallery-magnific').magnificPopup({
     type: 'image',
     gallery: {
-        // options for gallery
         enabled: true,
-        tCounter: '<span class="mfp-counter">%curr% of %total%</span>'
     },
     titleSrc: 'title',
 });
@@ -124,15 +151,19 @@ $('.video-youtube').magnificPopup({
 $(document).ready(function () {
     $('#contact__form').submit(function (e) {
         e.preventDefault();
-        var message = $('#contact__form-message').val();
+        var name = $('#contact__form-name').val();
         var email = $('#contact__form-email').val();
 
         $(".error").remove();
         $(".input").removeClass('input-error');
 
-        if (message.length < 1) {
-            $('#contact__form-message').addClass('input-error');
-            $('#contact__form-message').after('<span class="error">Заполните поле</span>');
+        setTimeout(function () {
+            $('.error').remove();
+        }, 5000);
+
+        if (name.length < 1) {
+            $('#contact__form-name').addClass('input-error');
+            $('#contact__form-name').after('<span class="error">Заполните поле</span>');
         }
         if (email.length < 1) {
             $('#contact__form-email').addClass('input-error');
@@ -155,5 +186,5 @@ $(window).scroll(function () {
     /*Если сделали скролл на 100px задаём новый класс для header*/
     if (box1 > 100) {
         $('.simple-select').removeClass('open');
-    } 
+    }
 });
