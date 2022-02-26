@@ -3,6 +3,11 @@ $(window).scroll(() => {
     var windowTop = $(window).scrollTop();
     windowTop > 200 ? $('.header').addClass('header-mini') : $('.header').removeClass('header-mini');
 });
+if ($(window).scrollTop() > 200) {
+    $('.header').addClass('header-mini')
+} else {
+    $('.header').removeClass('header-mini');
+}
 
 
 
@@ -40,22 +45,6 @@ document.addEventListener("scroll", function () {
 
 
 
-
-// --- Эффект-3D у "Places"
-let destroyBox = document.querySelector(".places__item");
-VanillaTilt.init(destroyBox, {
-    max: 15,
-    speed: 1000,
-    scale: 1.05,
-    transition: true,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-});
-if (window.innerWidth < 700) {
-    destroyBox.vanillaTilt.destroy();
-}
-
-
-
 // --- Аккордион
 $('.accordion').find('.accordion__item-header').click(function () {
     $('.accordion__item').removeClass('active');
@@ -65,9 +54,11 @@ $('.accordion').find('.accordion__item-header').click(function () {
 });
 
 
+
 const swiper_ways = new Swiper('.swiper-ways', {
     slidesPerView: 4,
     loop: true,
+    spaceBetween: -30,
     centeredSlides: true,
     navigation: {
         nextEl: '.next',
@@ -89,14 +80,15 @@ const swiper_ways = new Swiper('.swiper-ways', {
         },
         800: {
             slidesPerView: 3,
+            spaceBetween: -20,
         },
         550: {
             slidesPerView: 2,
-            centeredSlides: false,
+            spaceBetween: -10,
         },
         0: {
             slidesPerView: 1,
-            centeredSlides: true,
+            spaceBetween: 0,
         },
     }
 });
@@ -188,3 +180,4 @@ $(window).scroll(function () {
         $('.simple-select').removeClass('open');
     }
 });
+

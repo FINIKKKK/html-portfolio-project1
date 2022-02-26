@@ -5,9 +5,6 @@
             font-size: 12px;
         }
         .ways__item {
-            margin-left: -15px;
-        }
-        .ways__item {
             height: 530px;
         }
     }
@@ -42,9 +39,6 @@
     .ways {
         .ways__item-content .ways__item-btn {
             padding: 7px 30px;
-        }
-        .ways__item {
-            margin-left: -30px;
         }
         .ways {
             .next {
@@ -158,7 +152,10 @@
             }
         }
         .places__price {
-            padding: 15px 0 37px 25px;
+            bottom: -15px;
+            left: 95px;
+            width: 100px;
+            height: 76px;
             font-size: 32px;
             line-height: 36px;
             span {
@@ -262,6 +259,11 @@
             font-size: 14px;
         }
     }
+    .places {
+        .places__price {
+            left: 60px;
+        }
+    }
 }
 
 //Max-Width: 900px ================================
@@ -276,9 +278,6 @@
         }
         .ways__item-content {
             padding: 35px 20px;
-        }
-        .ways__item {
-            margin-left: -10px;
         }
         .ways__item {
             height: 480px;
@@ -450,10 +449,6 @@
         .ways__item-content {
             padding: 50px 35px;
         }
-        .ways__item {
-            position: relative;
-            margin-left: 0px;
-        }
         .ways {
             .back-text {
                 font-size: 65px;
@@ -525,11 +520,12 @@
             width: 400px;
         }
         .places__price {
-            padding: 30px 30px 15px 10px;
             bottom: auto;
             top: 80px;
             left: auto;
             right: 140px;
+            width: 100px;
+            height: 75px;
         }
     }
     .benefits {
@@ -966,7 +962,7 @@
             height: 350px;
         }
         .places__price {
-            right: 62px;
+            right: 55px;
         }
         .places__item-content {
             margin-top: -15px;
@@ -1202,11 +1198,9 @@
             padding: 25px 35px 65px 35px;
         }
         .places__price {
-            right: 15px;
-        }
-        .stars__wrapper {
-            bottom: -40px;
-            right: -5px;
+            right: 10px;
+            width: 85px;
+            height: 60px;
         }
         .star {
             width: 20px;
@@ -1360,9 +1354,6 @@
     .places {
         .places__item-img {
             height: 260px;
-        }
-        .stars__wrapper {
-            right: 0px;
         }
     }
     .footer .contact__welcome {

@@ -1360,7 +1360,6 @@ section {
 .ways .ways__item {
   position: relative;
   width: 380px;
-  margin-left: -30px;
   -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.35);
           box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.35);
   height: 630px;
@@ -1526,23 +1525,6 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: perspective(1000px);
-          transform: perspective(1000px);
-}
-
-.places .places__item-content,
-.places .places__price {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: perspective(1000px);
-          transform: perspective(1000px);
-}
-
-.places .parallax-3d {
-  -webkit-transform: translateZ(50px);
-          transform: translateZ(50px);
 }
 
 .places .places__item-img {
@@ -1588,13 +1570,23 @@ section {
 
 .places .places__price {
   position: absolute;
-  bottom: 0px;
-  left: 105px;
+  bottom: -20px;
+  left: 75px;
   background-color: #1c1c1c;
-  padding: 10px 5px 40px 35px;
   font-weight: 300;
   font-size: 40px;
   line-height: 47px;
+  width: 120px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .places .places__price span {
@@ -1604,8 +1596,8 @@ section {
 
 .places .stars__wrapper {
   position: absolute;
-  bottom: -20px;
-  right: 5px;
+  bottom: 10px;
+  right: 15px;
 }
 
 .places .star {
@@ -2727,10 +2719,6 @@ section {
   }
 
   .ways .ways__item {
-    margin-left: -15px;
-  }
-
-  .ways .ways__item {
     height: 530px;
   }
 
@@ -2767,10 +2755,6 @@ section {
 @media (max-width: 1100px) {
   .ways .ways__item-content .ways__item-btn {
     padding: 7px 30px;
-  }
-
-  .ways .ways__item {
-    margin-left: -30px;
   }
 
   .ways .ways .next {
@@ -2976,7 +2960,10 @@ section {
   }
 
   .places .places__price {
-    padding: 15px 0 37px 25px;
+    bottom: -15px;
+    left: 95px;
+    width: 100px;
+    height: 76px;
     font-size: 32px;
     line-height: 36px;
   }
@@ -3078,6 +3065,10 @@ section {
     margin-bottom: 23px;
     line-height: 20px;
     font-size: 14px;
+  }
+
+  .places .places__price {
+    left: 60px;
   }
 
   .gallery .gallery__item:nth-child(1) {
@@ -3274,10 +3265,6 @@ section {
 
   .ways .ways__item-content {
     padding: 35px 20px;
-  }
-
-  .ways .ways__item {
-    margin-left: -10px;
   }
 
   .ways .ways__item {
@@ -3492,11 +3479,6 @@ section {
     padding: 50px 35px;
   }
 
-  .ways .ways__item {
-    position: relative;
-    margin-left: 0px;
-  }
-
   .ways .ways .back-text {
     font-size: 65px;
     top: -27px;
@@ -3578,11 +3560,12 @@ section {
   }
 
   .places .places__price {
-    padding: 30px 30px 15px 10px;
     bottom: auto;
     top: 80px;
     left: auto;
     right: 140px;
+    width: 100px;
+    height: 75px;
   }
 
   .benefits .benefits__inner {
@@ -4240,7 +4223,7 @@ section {
   }
 
   .places .places__price {
-    right: 62px;
+    right: 55px;
   }
 
   .places .places__item-content {
@@ -4517,12 +4500,9 @@ section {
   }
 
   .places .places__price {
-    right: 15px;
-  }
-
-  .places .stars__wrapper {
-    bottom: -40px;
-    right: -5px;
+    right: 10px;
+    width: 85px;
+    height: 60px;
   }
 
   .places .star {
@@ -4881,10 +4861,6 @@ section {
 
   .places .places__item-img {
     height: 260px;
-  }
-
-  .places .stars__wrapper {
-    right: 0px;
   }
 
   .footer .contact__welcome .contact__title {

@@ -34,9 +34,9 @@ import util from 'gulp-util'; // Для FTP
 
 // Данные FTP
 let configFTP = {
-    host: "", // Адрес FTP сервера
-    user: "", // Имя пользователя
-    password: "", // Пароль
+    host: "test--digitalkrash.ru", // Адрес FTP сервера
+    user: "testdigi", // Имя пользователя
+    password: "KraSh359624157864", // Пароль
     parallel: 5, // Кол-во обновленных потоков
 }
 
@@ -415,7 +415,7 @@ const ftp = () => {
                 message: "Error: <%= error.message %>",
             })
         ))
-        .pipe(ftpConnect.dest(`/`));
+        .pipe(ftpConnect.dest(`/httpdocs/`));
 }
 
 // Наблюдатель за изменениями в файлах

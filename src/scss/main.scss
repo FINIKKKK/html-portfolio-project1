@@ -383,7 +383,6 @@
     .ways__item {
         position: relative;
         width: 380px;
-        margin-left: -30px;
         box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.35);
         height: 630px;
         &-img {
@@ -514,16 +513,6 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
-    }
-    .places__item-content,
-    .places__price {
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
-    }
-    .parallax-3d {
-        transform: translateZ(50px);
     }
     .places__item-img {
         width: 450px;
@@ -561,13 +550,17 @@
     }
     .places__price {
         position: absolute;
-        bottom: 0px;
-        left: 105px;
+        bottom: -20px;
+        left: 75px;
         background-color: $black;
-        padding: 10px 5px 40px 35px;
         font-weight: 300;
         font-size: 40px;
         line-height: 47px;
+        width: 120px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         span {
             font-size: 45px;
             line-height: 53px;
@@ -575,8 +568,8 @@
     }
     .stars__wrapper {
         position: absolute;
-        bottom: -20px;
-        right: 5px;
+        bottom: 10px;
+        right: 15px;
     }
     .star {
         width: 30px;
