@@ -63,13 +63,6 @@ section {
     padding: 0 15px;
 }
 
-// .wrapper-s {
-//     height: 100% !important;
-//     height: 100%;
-//     margin: 0 auto;
-//     overflow: hidden;
-// }
-
 .link:hover {
     color: $black;
 }
@@ -83,12 +76,12 @@ section {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     font-family: $font;
-    transition: 0.5s;
+    transition: 0.4s;
     background-size: 200% auto;
-    background-image: linear-gradient(to right, $black 0%, $black 51%, #303030 100%);
-}
-.btn:hover {
-    background-position: right center;
+    background-image: linear-gradient(to right, $black 0%, $black 51%, #808080 100%);
+    &:hover {
+        background-position: right center;
+    }
 }
 
 .input-block {
@@ -111,7 +104,6 @@ section {
     }
 }
 .error {
-    // display: none;
     position: absolute;
     bottom: -23px;
     left: 0px;
@@ -237,6 +229,12 @@ section {
         background-color: $black;
     }
 }
+.swiper-button-disabled {
+    pointer-events: none;
+    svg {
+        fill: lighten($gray, 20%);
+    }
+}
 
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
@@ -287,4 +285,12 @@ section {
 // --------- Select-Text ----------
 ::selection {
     background: rgba($black, 0.3);
+}
+
+
+html[lang="ru"] [lang="en"] {
+    display: none;
+}
+html[lang="en"] [lang="ru"] {
+    display: none;
 }

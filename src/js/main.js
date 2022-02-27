@@ -65,6 +65,7 @@ const swiper_ways = new Swiper('.swiper-ways', {
         prevEl: '.prev',
     },
     autoplay: {
+        enabled: false,
         delay: 5000,
         disableOnInteraction: true,
     },
@@ -90,14 +91,23 @@ const swiper_ways = new Swiper('.swiper-ways', {
             slidesPerView: 1,
             spaceBetween: 0,
         },
-    }
+    },
 });
+$(window).scroll(function () {
+    $('.ways').each(function () {
+        if ($(window).scrollTop() + $(window).height() >= $(this).position().top && $(window).scrollTop() < $(this).position().top + $(this).height()) {
+            swiper_ways.autoplay.start();
+        }
+    });
+});
+
+
 
 
 
 const swiper_places = new Swiper('.swiper-places', {
     slidesPerView: 1,
-    loop: true,
+    loop: false,
     spaceBetween: 100,
     navigation: {
         nextEl: '.next',
@@ -107,20 +117,24 @@ const swiper_places = new Swiper('.swiper-places', {
         el: ".swiper-pagination",
         clickable: true,
     },
-    breakpoints: {
-        600: {
-            autoplay: {
-                enabled: false,
-            },
-        },
-        0: {
-            autoplay: {
-                enabled: true,
-                delay: 8000,
-                disableOnInteraction: true,
-            },
-        },
-    }
+    autoplay: {
+        delay: 8000,
+        disableOnInteraction: true,
+    },
+    // breakpoints: {
+    //     600: {
+    //         autoplay: {
+    //             enabled: false,
+    //         },
+    //     },
+    //     0: {
+    //         autoplay: {
+    //             enabled: true,
+    //             delay: 8000,
+    //             disableOnInteraction: true,
+    //         },
+    //     },
+    // }
 });
 
 
@@ -181,3 +195,46 @@ $(window).scroll(function () {
     }
 });
 
+
+
+wow = new WOW(
+    {
+        boxClass: 'wow',
+        animateClass: 'animate__animated',
+        offset: 100,
+        mobile: true,
+        live: true
+    }
+)
+wow.init();
+
+
+$(document).ready(function () {
+    var show = true;
+    var countbox = ".numbers__inner";
+    $(window).on("scroll load resize", function () {
+        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+        var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+        var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+        var w_height = $(window).height(); // Высота окна браузера
+        var d_height = $(document).height(); // Высота всего документа
+        var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            $('.numbers__item-title').css('opacity', '1');
+            $('.numbers__item-title').spincrement({
+                thousandSeparator: "",
+                duration: 2000
+            });
+
+            show = false;
+        }
+    });
+
+});
+
+
+
+$(".simple-select a").on("click", function (e) {
+    e.preventDefault();
+    $("html").attr("lang", $(this).text());
+});
