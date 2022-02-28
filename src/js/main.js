@@ -1,4 +1,4 @@
-// --- Header-mini при скролле
+// --- Маленький Header при скролле
 $(window).scroll(() => {
     var windowTop = $(window).scrollTop();
     windowTop > 200 ? $('.header').addClass('header-mini') : $('.header').removeClass('header-mini');
@@ -18,7 +18,7 @@ $('.hamburger').on('click', function () {
 
 
 
-// --- Плавный переход к Якорю
+// --- Плавный переход к Якорям
 $("body").on('click', '[href*="#"]', function (e) {
     var fixed_offset = 100;
     $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
@@ -55,6 +55,7 @@ $('.accordion').find('.accordion__item-header').click(function () {
 
 
 
+// --- Slider(Ways)
 const swiper_ways = new Swiper('.swiper-ways', {
     slidesPerView: 4,
     loop: true,
@@ -93,6 +94,7 @@ const swiper_ways = new Swiper('.swiper-ways', {
         },
     },
 });
+// Запуск Аutoplay только когда пользователь вошел в область видимости
 $(window).scroll(function () {
     $('.ways').each(function () {
         if ($(window).scrollTop() + $(window).height() >= $(this).position().top && $(window).scrollTop() < $(this).position().top + $(this).height()) {
@@ -103,8 +105,7 @@ $(window).scroll(function () {
 
 
 
-
-
+// --- Slider(Places)
 const swiper_places = new Swiper('.swiper-places', {
     slidesPerView: 1,
     loop: false,
@@ -121,24 +122,11 @@ const swiper_places = new Swiper('.swiper-places', {
         delay: 8000,
         disableOnInteraction: true,
     },
-    // breakpoints: {
-    //     600: {
-    //         autoplay: {
-    //             enabled: false,
-    //         },
-    //     },
-    //     0: {
-    //         autoplay: {
-    //             enabled: true,
-    //             delay: 8000,
-    //             disableOnInteraction: true,
-    //         },
-    //     },
-    // }
 });
 
 
 
+// --- Magnific-Popup
 $('.gallery-magnific').magnificPopup({
     type: 'image',
     gallery: {
@@ -157,7 +145,8 @@ $('.video-youtube').magnificPopup({
 });
 
 
-// Проверка валидации 
+
+// --- Проверка валидации 
 $(document).ready(function () {
     $('#contact__form').submit(function (e) {
         e.preventDefault();
@@ -203,6 +192,7 @@ $(document).ready(function () {
 
 
 
+// --- Закрытие списка при скролле 
 $(window).scroll(function () {
     var box1 = $('.header').offset().top;
     /*Если сделали скролл на 100px задаём новый класс для header*/
@@ -213,6 +203,7 @@ $(window).scroll(function () {
 
 
 
+// --- Анимация при скролле(WOW)
 wow = new WOW(
     {
         boxClass: 'wow',
@@ -225,6 +216,8 @@ wow = new WOW(
 wow.init();
 
 
+
+// --- Анимация появления чисел 
 $(document).ready(function () {
     var show = true;
     var countbox = ".numbers__inner";
@@ -250,47 +243,164 @@ $(document).ready(function () {
 
 
 
-$(".simple-select a").on("click", function (e) {
-    e.preventDefault();
-    $("html").attr("lang", $(this).text());
+// --- Проверка геолокации и автоматическое определение языка страницы
+$.ajax({
+    url: "https://get.geojs.io/v1/ip/geo.js",
+    dataType: "jsonp",
+    jsonpCallback: "geoip",
+    success: function (data) {
+        // Коды русскоязычных стран
+        let countries = ["KZ", "UA", "RU", "BY", "UZ", "TM", "GE", "AZ", "MD", "KG"];
+
+        // Изменение атрибутта lang у html
+        if (countries.includes(data.country_code)) {
+            $("html").attr("lang", "ru");
+        } else {
+            $("html").attr("lang", "en");
+        }
+
+        // Перевод страницы в зависимости от атрибута lang
+        var tran = new Translater({
+            lang: `${$("html").attr("lang")}`
+        });
+
+        // Смена активного элемента в списке языков
+        if ($("html").attr("lang") === 'ru') {
+            $('.simple-select ul li').removeClass('active');
+            $('.simple-select ul li').first().addClass('active');
+            $('.simple-select span').html('ru');
+        } else {
+            $('.simple-select ul li').removeClass('active');
+            $('.simple-select ul li').last().addClass('active');
+            $('.simple-select span').html('en');
+        }
+
+        // Смена языка в атрибутте lang
+        $(".simple-select a").on("click", function (e) {
+            e.preventDefault();
+            $("html").attr("lang", $(this).text());
+        });
+        // Смена языка в списке
+        $('.simple-select ul li a').first().click(function () {
+            $(this).toggleClass('gg');
+            tran.setLang('default');
+        });
+        $('.simple-select ul li a').last().click(function () {
+            $(this).toggleClass('gg');
+            tran.setLang('en');
+        });
+    }
 });
 
 
 
-// $.ajax({
-//     url: "https://get.geojs.io/v1/ip/geo.js",
-//     dataType: "jsonp",
-//     jsonpCallback: "geoip",
-//     success: function (data) {
-//         let countries = ["KZ", "UA", "RU", "BY", "UZ", "TM", "GE", "AZ", "MD", "KG"];
-//         if (countries.includes(data.country_code)) {
-//             $("html").attr("lang", "ru");
-//         } else {
-//             $("html").attr("lang", "en");
-//         }
-//     }
-// });
+// --- Custom Cursor
+var cursor = {
+    delay: 8,
+    _x: 0,
+    _y: 0,
+    endX: (window.innerWidth / 2),
+    endY: (window.innerHeight / 2),
+    cursorVisible: true,
+    cursorEnlarged: false,
+    $outline: document.querySelector('.cursor-dot-outline'),
 
-var tran = new Translater({
-    lang: `${$("html").attr("lang")}`
-});
+    init: function () {
+        // Set up element sizes
+        this.outlineSize = this.$outline.offsetWidth;
+
+        this.setupEventListeners();
+        this.animateDotOutline();
+    },
+
+    setupEventListeners: function () {
+        var self = this;
+
+        // Anchor hovering
+        document.querySelectorAll('a, .simple-select, .accordion__item-header, button').forEach(function (el) {
+            el.addEventListener('mouseover', function () {
+                self.cursorEnlarged = true;
+                self.toggleCursorSize();
+            });
+            el.addEventListener('mouseout', function () {
+                self.cursorEnlarged = false;
+                self.toggleCursorSize();
+            });
+        });
+
+        // Click events
+        document.addEventListener('mousedown', function () {
+            self.cursorEnlarged = true;
+            self.toggleCursorSize();
+        });
+        document.addEventListener('mouseup', function () {
+            self.cursorEnlarged = false;
+            self.toggleCursorSize();
+        });
 
 
-$('.simple-select ul li a').first().click(function () {
-    $(this).toggleClass('gg');
-    tran.setLang('default');
-});
-$('.simple-select ul li a').last().click(function () {
-    $(this).toggleClass('gg');
-    tran.setLang('en');
-});
+        document.addEventListener('mousemove', function (e) {
+            // Show the cursor
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
 
-if ($("html").attr("lang") === 'ru') {
-    $('.simple-select ul li').removeClass('active');
-    $('.simple-select ul li').first().addClass('active');
-    $('.simple-select span').html('ru');
-} else {
-    $('.simple-select ul li').removeClass('active');
-    $('.simple-select ul li').last().addClass('active');
-    $('.simple-select span').html('en');
+            // Position the dot
+            self.endX = e.pageX;
+            self.endY = e.pageY;
+        });
+
+        // Hide/show cursor
+        document.addEventListener('mouseenter', function (e) {
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
+            self.$outline.style.opacity = 1;
+        });
+
+        document.addEventListener('mouseleave', function (e) {
+            self.cursorVisible = true;
+            self.toggleCursorVisibility();
+            self.$outline.style.opacity = 0;
+        });
+    },
+
+    animateDotOutline: function () {
+        var self = this;
+
+        self._x += (self.endX - self._x) / self.delay;
+        self._y += (self.endY - self._y) / self.delay;
+        self.$outline.style.top = self._y + 'px';
+        self.$outline.style.left = self._x + 'px';
+
+        requestAnimationFrame(this.animateDotOutline.bind(self));
+    },
+
+    toggleCursorSize: function () {
+        var self = this;
+
+        if (self.cursorEnlarged) {
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        } else {
+            self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
+        }
+    },
+
+    toggleCursorVisibility: function () {
+        var self = this;
+
+        if (self.cursorVisible) {
+            self.$outline.style.opacity = 1;
+        } else {
+            self.$outline.style.opacity = 0;
+        }
+    },
+
 }
+cursor.init();
+// При наведении на input, скрывать cursor
+$('input').on('mouseover', function () {
+    $('.cursor-dot-outline').css('background-color', 'transparent');
+})
+
+$('input').on('mouseout', function () {
+    $('.cursor-dot-outline').css('background-color', 'rgba(28,28,28,.5)');
+})

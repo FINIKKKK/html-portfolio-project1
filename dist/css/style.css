@@ -793,6 +793,27 @@ section {
   fill: #a7a7a7;
 }
 
+.cursor-dot-outline {
+  z-index: 1000;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.3s ease-in-out, background-color 0.3s, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s, -webkit-transform 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s, -webkit-transform 0.3s ease-in-out;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(28, 28, 28, 0.5);
+}
+
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
   cursor: default;
@@ -835,6 +856,14 @@ section {
 }
 
 .mfp-counter {
+  display: none;
+}
+
+html[lang="ru"] [lang="en"] {
+  display: none;
+}
+
+html[lang="en"] [lang="ru"] {
   display: none;
 }
 
