@@ -287,10 +287,19 @@ section {
     background: rgba($black, 0.3);
 }
 
-
-html[lang="ru"] [lang="en"] {
-    display: none;
-}
-html[lang="en"] [lang="ru"] {
-    display: none;
-}
+// html[lang="ru"] [lang="en"] {
+//     display: none !important;
+// }
+// html[lang="en"] [lang="ru"] {
+//     display: none !important;
+// }
+// body {
+//     top: 0 !important;
+// }
+// .skiptranslate {
+//     display: none;
+//     height: 0;
+// }
+// .language__img {
+//     cursor: pointer;
+// }

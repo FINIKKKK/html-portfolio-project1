@@ -144,7 +144,11 @@ $('.gallery-magnific').magnificPopup({
     gallery: {
         enabled: true,
     },
-    titleSrc: 'title',
+    image: {
+        titleSrc: function (item) {
+            return item.el.find('.gallery__item-place').html() + `<small>${item.el.find('.gallery__item-name').html()}</small>`;
+        },
+    }
 });
 $('.video-youtube').magnificPopup({
     type: 'iframe',
@@ -169,17 +173,29 @@ $(document).ready(function () {
 
         if (name.length < 1) {
             $('#contact__form-name').addClass('input-error');
-            $('#contact__form-name').after('<span class="error">Заполните поле</span>');
+            if ($("html").attr("lang") === 'ru') {
+                $('#contact__form-name').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#contact__form-name').after('<span class="error">Fill in the field</span>');
+            }
         }
         if (email.length < 1) {
             $('#contact__form-email').addClass('input-error');
-            $('#contact__form-email').after('<span class="error">Заполните поле</span>');
+            if ($("html").attr("lang") === 'ru') {
+                $('#contact__form-email').after('<span class="error">Заполните поле</span>');
+            } else {
+                $('#contact__form-email').after('<span class="error">Fill in the field</span>');
+            }
         } else {
             var regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             var validEmail = regEx.test(email);
             if (!validEmail) {
                 $('#contact__form-email').addClass('input-error');
-                $('#contact__form-email').after('<span class="error">Заполните правильно</span>');
+                if ($("html").attr("lang") === 'ru') {
+                    $('#contact__form-email').after('<span class="error">Заполните правильно</span>');
+                } else {
+                    $('#contact__form-email').after('<span class="error">Fill in correctly</span>');
+                }
             }
         }
     });
@@ -238,3 +254,43 @@ $(".simple-select a").on("click", function (e) {
     e.preventDefault();
     $("html").attr("lang", $(this).text());
 });
+
+
+
+// $.ajax({
+//     url: "https://get.geojs.io/v1/ip/geo.js",
+//     dataType: "jsonp",
+//     jsonpCallback: "geoip",
+//     success: function (data) {
+//         let countries = ["KZ", "UA", "RU", "BY", "UZ", "TM", "GE", "AZ", "MD", "KG"];
+//         if (countries.includes(data.country_code)) {
+//             $("html").attr("lang", "ru");
+//         } else {
+//             $("html").attr("lang", "en");
+//         }
+//     }
+// });
+
+var tran = new Translater({
+    lang: `${$("html").attr("lang")}`
+});
+
+
+$('.simple-select ul li a').first().click(function () {
+    $(this).toggleClass('gg');
+    tran.setLang('default');
+});
+$('.simple-select ul li a').last().click(function () {
+    $(this).toggleClass('gg');
+    tran.setLang('en');
+});
+
+if ($("html").attr("lang") === 'ru') {
+    $('.simple-select ul li').removeClass('active');
+    $('.simple-select ul li').first().addClass('active');
+    $('.simple-select span').html('ru');
+} else {
+    $('.simple-select ul li').removeClass('active');
+    $('.simple-select ul li').last().addClass('active');
+    $('.simple-select span').html('en');
+}

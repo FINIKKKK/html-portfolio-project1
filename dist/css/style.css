@@ -858,14 +858,6 @@ section {
   background: rgba(28, 28, 28, 0.3);
 }
 
-html[lang="ru"] [lang="en"] {
-  display: none;
-}
-
-html[lang="en"] [lang="ru"] {
-  display: none;
-}
-
 .header {
   -webkit-transition: background-color 0.4s;
   -o-transition: background-color 0.4s;
@@ -1733,7 +1725,17 @@ html[lang="en"] [lang="ru"] {
 
 .numbers .numbers__title {
   border-radius: 50%;
-  padding: 73px 50px;
+  width: 250px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #1c1c1c;
 }
 

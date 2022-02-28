@@ -29,6 +29,10 @@
 @@include('../../node_modules/wowjs/dist/wow.min.js');
 
 
+@@include('../../node_modules/translater.js/dist/translater.min.js');
+
+
+
 // Main-JS -----------------
 @@include('./main.js');
 
