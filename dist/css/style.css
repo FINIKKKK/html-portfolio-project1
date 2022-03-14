@@ -7799,6 +7799,10 @@ html[lang="en"] [lang="ru"] {
 }
 
 @media (max-width: 800px) {
+  .cursor-dot-outline {
+    display: none;
+  }
+
   .faq .accordion {
     padding: 0;
   }

@@ -110,6 +110,10 @@ const swiper_places = new Swiper('.swiper-places', {
     slidesPerView: 1,
     loop: false,
     spaceBetween: 100,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
     navigation: {
         nextEl: '.next',
         prevEl: '.prev',
