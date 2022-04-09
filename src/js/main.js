@@ -10,7 +10,6 @@ if ($(window).scrollTop() > 200) {
 }
 
 
-
 // --- Hamburger
 $('.hamburger').on('click', function () {
     $('.header').toggleClass('mobile');
@@ -38,6 +37,7 @@ const title = document.querySelector('.top__title');
 document.addEventListener("scroll", function () {
     var value = window.scrollY;
 
+    // human.style.transform = `translateY(${value * 0.15}px)`;
     human.style.transform = `translateY(${value * 0.15}px)`;
     mountains.style.top = -value * 0.15 + 'px';
     title.style.top = value * 1 + 'px';
@@ -268,6 +268,16 @@ $.ajax({
             lang: `${$("html").attr("lang")}`
         });
 
+        // Смена Title
+        var url = window.location.href;
+        var page1 = new RegExp("/");
+
+        if (page1.test(url) && $("html").attr("lang") === 'ru') {
+            $("title").html("Проект 1");
+        } else {
+            $("title").html("Project 1");
+        }
+
         // Смена активного элемента в списке языков
         if ($("html").attr("lang") === 'ru') {
             $('.simple-select ul li').removeClass('active');
@@ -307,7 +317,7 @@ var cursor = {
     endY: (window.innerHeight / 2),
     cursorVisible: true,
     cursorEnlarged: false,
-    $outline: document.querySelector('.cursor-dot-outline'),
+    $outline: document.querySelector('.cursor'),
 
     init: function () {
         // Set up element sizes
@@ -329,6 +339,18 @@ var cursor = {
             el.addEventListener('mouseout', function () {
                 self.cursorEnlarged = false;
                 self.toggleCursorSize();
+            });
+        });
+
+        // Anchor hovering
+        document.querySelectorAll('input').forEach(function (el) {
+            el.addEventListener('mouseover', function () {
+                self.cursorEnlarged = true;
+                $('.cursor').css('background-color', 'transparent');
+            });
+            el.addEventListener('mouseout', function () {
+                self.cursorEnlarged = false;
+                $('.cursor').css('background-color', 'rgba(28,28,28,.5)');
             });
         });
 
@@ -400,11 +422,5 @@ var cursor = {
 
 }
 cursor.init();
-// При наведении на input, скрывать cursor
-$('input').on('mouseover', function () {
-    $('.cursor-dot-outline').css('background-color', 'transparent');
-})
 
-$('input').on('mouseout', function () {
-    $('.cursor-dot-outline').css('background-color', 'rgba(28,28,28,.5)');
-})
+

@@ -10,6 +10,9 @@ html {
     &.hidden {
         overflow-y: hidden;
     }
+    &.loaded-hiding {
+        overflow-y: hidden;
+    }
 }
 *,
 *::after,
@@ -54,6 +57,13 @@ textarea {
 }
 section {
     position: relative;
+}
+img {
+    pointer-events: none;
+    user-select: none;
+}
+* {
+    user-select: none;
 }
 
 // ----------- Global-Class -------------
@@ -156,13 +166,13 @@ section {
             z-index: -1;
         }
     }
-}
-.soclist__item:hover {
-    svg {
-        fill: $black !important;
-    }
-    &::before {
-        opacity: 1;
+    .soclist__item:hover {
+        svg {
+            fill: $black !important;
+        }
+        &::before {
+            opacity: 1;
+        }
     }
 }
 
@@ -203,6 +213,7 @@ section {
     }
 }
 
+// Swiper Options
 .prev,
 .next {
     position: absolute;
@@ -235,7 +246,8 @@ section {
     }
 }
 
-.cursor-dot-outline {
+// Cursor
+.cursor {
     z-index: 1000;
     pointer-events: none;
     position: absolute;
@@ -250,6 +262,7 @@ section {
     background-color: rgba($black, 0.5);
 }
 
+// Gallery Options
 .mfp-zoom-out-cur,
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
     cursor: default;
@@ -285,6 +298,35 @@ section {
     display: none;
 }
 
+// Preloader 
+.loaded {
+    .preloader .preloader__block {
+        animation: preloader__block 0.5s both;
+        pointer-events: none;
+        @keyframes preloader__block {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    .preloader {
+        animation: preloader 1s both;
+        animation-delay: 0.5s;
+    }
+    @keyframes preloader {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+}
+
+// Languages
 html[lang="ru"] [lang="en"] {
     display: none;
 }
@@ -292,7 +334,7 @@ html[lang="en"] [lang="ru"] {
     display: none;
 }
 
-// --------- ScrollBar ----------
+// ScrollBar
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -303,7 +345,7 @@ html[lang="en"] [lang="ru"] {
     background-color: #1c1c1c;
 }
 
-// --------- Select-Text ----------
+// Select-Text
 ::selection {
     background: rgba($black, 0.3);
 }

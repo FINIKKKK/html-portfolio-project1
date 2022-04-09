@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="loaded-hiding">
 
-@@include('./blocks/_head.html')
+@@include('./blocks/main/_head.html')
 
 <body>
 
-    @@include('./blocks/_header.html')
+    @@include('./blocks/main/_header.html')
 
-    <!-- cursor -->
-    <div class="cursor-dot-outline"></div>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__block">
+            <div class='container-spinner'>
+                <div class='spinner'>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                    <div class='item'></div>
+                </div>
+            </div>
+            <svg>
+                <defs>
+                    <filter id='goo'>
+                        <feGaussianBlur in='SourceGraphic' stdDeviation='8' result='blur' />
+                        <feColorMatrix in='blur' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -8' result='goo' />
+                        <feBlend in='SourceGraphic' in2='goo' />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
 
 
     <!-- top
@@ -34,7 +61,7 @@
         </div>
     </section>
     <!-- top end -->
-    
+
 
     <!-- about
     ======================================================= -->
@@ -872,13 +899,13 @@
         </div>
     </section>
     <!-- blog end -->
+    
 
-
-    @@include('./blocks/_footer.html')
+    @@include('./blocks/main/_footer.html')
 
 
     <!-- Scripts -->
-    @@include('./blocks/_js.html')
+    @@include('./blocks/main/_js.html')
 
 </body>
 
