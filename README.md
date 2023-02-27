@@ -15,4 +15,4 @@
 
 
 ## Demo 🔥:
-https://html-old-portfolio-project1.netlify.app/
+https://html-portfolio-project1.netlify.app
